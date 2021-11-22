@@ -71,7 +71,8 @@ class SingleLinkedList:
                 count +=1
                 tempNode = tempNode.next
             tempNode.next = tempNode.next.next
-
+    def deleteLL(self):
+        self.head = None
 
 
     
@@ -88,4 +89,7 @@ ll1.length()
 ll1.insert(10,30)
 ll1.print()
 ll1.remove(-1)
+ll1.print()
+ll1.deleteLL()
+print('After deletion')
 ll1.print()
