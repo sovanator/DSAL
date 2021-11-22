@@ -51,7 +51,30 @@ class SingleLinkedList:
             
         print(s)
 
+    def remove(self, location):
+        if self.length()<location:
+            print("No location found")
+        if location==0:
+            self.head = self.head.next
+        elif location==-1:
+            tempNode = self.head
+            counter=0
+            while self.length()-2>counter:
+                tempNode=tempNode.next
+                counter+=1
+            tempNode.next = None
 
+        else:
+            count = 0
+            tempNode = self.head
+            while count<location -1:
+                count +=1
+                tempNode = tempNode.next
+            tempNode.next = tempNode.next.next
+
+
+
+    
         
 ll1 = SingleLinkedList()
 ll1.addbegining(1)
@@ -63,4 +86,6 @@ ll1.print()
 ll1.insert(10,4)
 ll1.length()
 ll1.insert(10,30)
+ll1.print()
+ll1.remove(-1)
 ll1.print()
