@@ -53,7 +53,29 @@ class CircularLinkedList():
             tempNode.next = node                    
             node.next = self.head
             self.tail = node
-        
+    def length(self):
+        tempNode = self.head
+        l =0
+        while tempNode.next != self.head:
+            tempNode = tempNode.next
+            l = l+1
+        return l
+    def addLocation(self, value, location):
+        if location > self.length()+2:
+            print('Out of bound')
+        elif location == 0:
+            self.addtoBegining(value)
+        elif location == -1:
+            self.addtoEnd(value)
+        else:
+            node = Node(value)
+            tempNode = self.head
+            count = 0
+            while count < location-1:
+                count+=1
+                tempNode=tempNode.next
+            node.next = tempNode.next
+            tempNode.next = node
 ll1= CircularLinkedList()
 # ll1.createCSLL(2)
 ll1.createCSLL(1)
@@ -62,4 +84,7 @@ ll1.addtoBegining(2)
 ll1.addtoBegining(3)
 ll1.addtoBegining(4)
 ll1.addtoEnd(20)
+ll1.print()
+print(ll1.length())
+ll1.addLocation(30, -1)
 ll1.print()
