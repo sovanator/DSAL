@@ -42,7 +42,17 @@ class CircularLinkedList():
             node.next = self.head
             self.head = node
             tempNode.next = node
-                        
+    def addtoEnd(self,value):
+        if self.head == None:
+            self.createCSLL(value)
+        else:
+            node=Node(value)
+            tempNode = self.head
+            while tempNode.next !=self.head:
+                tempNode = tempNode.next
+            tempNode.next = node                    
+            node.next = self.head
+            self.tail = node
         
 ll1= CircularLinkedList()
 # ll1.createCSLL(2)
@@ -51,4 +61,5 @@ ll1.createCSLL(1)
 ll1.addtoBegining(2)
 ll1.addtoBegining(3)
 ll1.addtoBegining(4)
+ll1.addtoEnd(20)
 ll1.print()
