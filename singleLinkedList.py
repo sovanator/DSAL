@@ -73,24 +73,34 @@ class SingleLinkedList:
             tempNode.next = tempNode.next.next
     def deleteLL(self):
         self.head = None
+    def removeDup(self):
+        s = set()
+        location = 0
+        tempNode = self.head
+        while tempNode:
+            if tempNode.value in s:
+                self.remove(location)
+            else:
+                location+=1
+            s.add(tempNode.value)
+            tempNode=tempNode.next
+        print(s)
 
 
-    
+
+ll = SingleLinkedList()    
         
-ll1 = SingleLinkedList()
-ll1.addbegining(1)
-ll1.addbegining(2)
-ll1.addbegining(3)
-ll1.addbegining(4)
-ll1.addEnd(4)
-# SingleLinkedList.print(ll1)
-ll1.insert(10,4)
-ll1.length()
-ll1.insert(10,30)
-# ll1.print()
-ll1.remove(-1)
-# ll1.print()
-# ll1.deleteLL()
-# print('After deletion')
-# ll1.print()
-print(SingleLinkedList.__dict__)
+ll.addbegining(1)
+ll.addbegining(2)
+ll.addbegining(3)
+ll.addbegining(4)
+ll.addbegining(5)
+ll.addbegining(6)
+ll.addbegining(1)
+ll.addbegining(2)
+ll.addbegining(3)
+ll.addbegining(4)
+ll.addbegining(5)
+ll.print()
+ll.removeDup()
+ll.print()

@@ -16,6 +16,8 @@ class Stack:
     def peek(self):
         if not self.isEmpty():
             return self.list[-1]
+    def delete(self):
+        self.list = []
 s = Stack()
 s.push(1)
 s.push(2)
