@@ -24,7 +24,7 @@ class SingleLinkedList:
         tempNode = self.head
         count=1
         while tempNode.next:
-            tempNode = tempNode.next
+            tempNode = tempNode.next 
             count+=1
         return count
 

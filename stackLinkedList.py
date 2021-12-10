@@ -9,15 +9,8 @@ class StackLL:
     
     def push(self, value):
         node = Node(value)
-        if self.head == None:
-            self.head = node
-            print("here")
-            print(node)
-            print(node.value)
-            print(self.head)
-        else:
-            node.next = self.head
-            self.head = node
+        node.next = self.head
+        self.head = node
         print(self.head)
     def pop(self):
         if self.head == None:
